@@ -10,7 +10,7 @@ from rlkit.envs.wrappers import NormalizedBoxEnv
 from rlkit.samplers.data_collector import MdpPathCollector
 from rlkit.torch.sac.policies import TanhGaussianPolicy, MakeDeterministic
 # from rlkit.torch.sac.sac import SACTrainer
-from util.old_masac import MASACTrainer
+from util.masac import MASACTrainer
 from rlkit.torch.td3.td3 import TD3Trainer
 from rlkit.torch.networks import FlattenMlp, TanhMlpPolicy
 from rlkit.exploration_strategies.base import PolicyWrappedWithExplorationStrategy
@@ -26,100 +26,15 @@ from robosuite.controllers import load_controller_config, ALL_CONTROLLERS
 import numpy as np
 
 #==================== Custom policy for multiagent case =================================
-#
-#
-# from rlkit.policies.base import ExplorationPolicy, Policy
-# from rlkit.torch.core import eval_np
-# from rlkit.torch.distributions import TanhNormal
-# from rlkit.torch.networks import Mlp
-#
-# LOG_SIG_MAX = 2
-# LOG_SIG_MIN = -20
-#
-# class MATanhGaussianPolicy(Mlp, ExplorationPolicy):
-#     def __init__(
-#             self,
-#             hidden_sizes,
-#             obs_dim,
-#             action_dim,
-#             std=None,
-#             init_w=1e-3,
-#             **kwargs
-#     ):
-#         super().__init__(
-#             hidden_sizes,
-#             input_size=obs_dim,
-#             output_size=action_dim,
-#             init_w=init_w,
-#             **kwargs
-#         )
-#         self.log_std = None
-#         self.std = std
-#
-#         # self.qf1_agent0 = qf1_agent0
-#
-#         if std is None:
-#             last_hidden_size = obs_dim
-#             if len(hidden_sizes) > 0:
-#                 last_hidden_size = hidden_sizes[-1]
-#             self.last_fc_log_std = nn.Linear(last_hidden_size, action_dim)
-#             self.last_fc_log_std.weight.data.uniform_(-init_w, init_w)
-#             self.last_fc_log_std.bias.data.uniform_(-init_w, init_w)
-#         else:
-#             self.log_std = np.log(std)
-#             assert LOG_SIG_MIN <= self.log_std <= LOG_SIG_MAX
-#
-#     def forward(self, obs):
-#
-#         h = obs
-#         for i, fc in enumerate(self.fcs):
-#             h = self.hidden_activation(fc(h))
-#         # mean = self.last_fc(h)
-#
-#         mean1 = self.last_fc(h)
-#         mean2 = self.last_fc(h)
-#
-#         mean = torch.stack((mean1, mean2), axis=0)
-#
-#         if self.std is None:
-#             log_std = self.last_fc_log_std(h)
-#             log_std = torch.clamp(log_std, LOG_SIG_MIN, LOG_SIG_MAX)
-#             std1 = torch.exp(log_std)
-#             std2 = torch.exp(log_std)
-#         else:
-#             std1 = torch.from_numpy(np.array([self.std, ])).float().to(
-#                 ptu.device)
-#             std2 = torch.from_numpy(np.array([self.std, ])).float().to(
-#                 ptu.device)
-#
-#         std = torch.stack((std1, std2), axis=0)
-#
-#         return TanhNormal(mean, std)
-#
-#     # def get_action(self, obs_np, deterministic=False):
-#     #     actions = self.get_actions(obs_np[None], deterministic=deterministic)
-#     #     return actions[0, :], {}
-#     #
-#     # def get_actions(self, obs_np, deterministic=False):
-#     #     return eval_np(self, obs_np, deterministic=deterministic)[0]
-#
-#     def get_action(self, obs_np):
-#         actions = self.get_actions(obs_np[None])
-#         return actions[0, :], {}
-#
-#     def get_actions(self, obs_np):
-#         return eval_np(self, obs_np)
-
-
 import numpy as np
 import torch
 from torch import nn as nn
 
 from rlkit.policies.base import ExplorationPolicy, Policy
 from rlkit.torch.core import eval_np
-# from rlkit.torch.distributions import TanhNormal
+from rlkit.torch.distributions import TanhNormal
 # from util.distributions_multi import MultiTanhNormal
-from util.distributions import TanhNormal
+# from util.distributions import TanhNormal
 from rlkit.torch.networks import Mlp
 from collections import namedtuple
 
@@ -366,52 +281,52 @@ def experiment(variant, agent="MASAC"):
     expl_policy = None
 
     # Instantiate trainer with appropriate agent
-    if agent == "SAC":
-        expl_policy = TanhGaussianPolicy(
-            obs_dim=obs_dim,
-            action_dim=action_dim,
-            **variant['policy_kwargs'],
-        )
-        eval_policy = MakeDeterministic(expl_policy)
-        trainer = SACTrainer(
-            env=eval_env,
-            policy=expl_policy,
-            qf1=qf1,
-            qf2=qf2,
-            target_qf1=target_qf1,
-            target_qf2=target_qf2,
-            **variant['trainer_kwargs']
-        )
-    elif agent == "TD3":
-        eval_policy = TanhMlpPolicy(
-            input_size=obs_dim,
-            output_size=action_dim,
-            **variant['policy_kwargs']
-        )
-        target_policy = TanhMlpPolicy(
-            input_size=obs_dim,
-            output_size=action_dim,
-            **variant['policy_kwargs']
-        )
-        es = GaussianStrategy(
-            action_space=expl_env.action_space,
-            max_sigma=0.1,
-            min_sigma=0.1,  # Constant sigma
-        )
-        expl_policy = PolicyWrappedWithExplorationStrategy(
-            exploration_strategy=es,
-            policy=eval_policy,
-        )
-        trainer = TD3Trainer(
-            policy=eval_policy,
-            qf1=qf1,
-            qf2=qf2,
-            target_qf1=target_qf1,
-            target_qf2=target_qf2,
-            target_policy=target_policy,
-            **variant['trainer_kwargs']
-        )
-    elif agent == "MASAC":
+    # if agent == "SAC":
+    #     expl_policy = TanhGaussianPolicy(
+    #         obs_dim=obs_dim,
+    #         action_dim=action_dim,
+    #         **variant['policy_kwargs'],
+    #     )
+    #     eval_policy = MakeDeterministic(expl_policy)
+    #     trainer = SACTrainer(
+    #         env=eval_env,
+    #         policy=expl_policy,
+    #         qf1=qf1,
+    #         qf2=qf2,
+    #         target_qf1=target_qf1,
+    #         target_qf2=target_qf2,
+    #         **variant['trainer_kwargs']
+    #     )
+    # elif agent == "TD3":
+    #     eval_policy = TanhMlpPolicy(
+    #         input_size=obs_dim,
+    #         output_size=action_dim,
+    #         **variant['policy_kwargs']
+    #     )
+    #     target_policy = TanhMlpPolicy(
+    #         input_size=obs_dim,
+    #         output_size=action_dim,
+    #         **variant['policy_kwargs']
+    #     )
+    #     es = GaussianStrategy(
+    #         action_space=expl_env.action_space,
+    #         max_sigma=0.1,
+    #         min_sigma=0.1,  # Constant sigma
+    #     )
+    #     expl_policy = PolicyWrappedWithExplorationStrategy(
+    #         exploration_strategy=es,
+    #         policy=eval_policy,
+    #     )
+    #     trainer = TD3Trainer(
+    #         policy=eval_policy,
+    #         qf1=qf1,
+    #         qf2=qf2,
+    #         target_qf1=target_qf1,
+    #         target_qf2=target_qf2,
+    #         target_policy=target_policy,
+    #         **variant['trainer_kwargs']
+    #     )
+    if agent == "MASAC":
         # use the custom policy for multi-agent case defined at the beginning
         expl_policy = MATanhGaussianPolicy(
             obs_dim=obs_dim,
@@ -433,7 +348,7 @@ def experiment(variant, agent="MASAC"):
             **variant['trainer_kwargs']
         )
     else:
-        print("Error: No valid agent chosen!")
+        print("Error: Agent chosen not valid! (try MASAC)")
 
     replay_buffer = EnvReplayBuffer(
         variant['replay_buffer_size'],
@@ -539,7 +454,6 @@ def simulate_policy(
 
     if printout:
         print("Policy loaded")
-
     # Use CUDA if available
     if torch.cuda.is_available():
         set_gpu_mode(True)

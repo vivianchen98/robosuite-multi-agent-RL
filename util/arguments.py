@@ -3,7 +3,7 @@ Utility functions for parsing / processing command line arguments
 """
 
 import argparse
-from util.rlkit_utils import AGENTS
+from util.rlkit_utils_multi import AGENTS
 
 
 # Define mapping from string True / False to bool True / False

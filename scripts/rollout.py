@@ -1,4 +1,5 @@
-from util.rlkit_utils import simulate_policy
+import init_path
+from util.rlkit_utils_multi import simulate_policy
 from util.arguments import add_rollout_args, parser
 import robosuite as suite
 from robosuite.wrappers import GymWrapper
@@ -86,12 +87,12 @@ if __name__ == "__main__":
                            use_camera_obs=args.record_video,
                            reward_shaping=True
                            )
-    
+
     # Make sure we only pass in the proprio and object obs (no images)
     keys = ["object-state"]
     for idx in range(len(env_suite.robots)):
         keys.append(f"robot{idx}_proprio-state")
-    
+
     # Wrap environment so it's compatible with Gym API
     env = GymWrapper(env_suite, keys=keys)
 

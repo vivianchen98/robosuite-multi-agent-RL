@@ -11,6 +11,9 @@ import init_path
 from util.rlkit_utils_multi import experiment
 from util.arguments import *
 
+import wandb
+wandb.init(project="robosuite-multi-agent-RL", entity="shenghui")
+
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 # Add necessary command line args
@@ -110,6 +113,9 @@ def run_experiment():
     abs_root_dir = os.path.join(THIS_DIR, args.log_dir)
     tmp_dir = setup_logger(tmp_file_prefix, variant=variant, base_log_dir=abs_root_dir)
     ptu.set_gpu_mode(torch.cuda.is_available())  # optionally set the GPU (default=False
+
+    # set wandb config
+    wandb.config = trainer_kwargs
 
     # Run experiment
     experiment(variant, agent=args.agent)

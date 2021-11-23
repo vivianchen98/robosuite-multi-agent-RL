@@ -91,7 +91,7 @@ def add_agent_args():
     parser.add_argument(
         '--agent',
         type=str,
-        default="SAC",
+        default="MASAC",
         choices=AGENTS,
         help='Agent to use for training')
     parser.add_argument(

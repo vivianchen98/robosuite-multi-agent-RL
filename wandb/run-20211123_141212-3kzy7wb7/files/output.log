@@ -1,0 +1,81 @@
+------------- Running MASAC --------------
+  Params:
+    variant: variant_multi_twoarmhandover.json
+2021-11-23 14:12:13.011817 CST | Variant:
+2021-11-23 14:12:13.012432 CST | {
+  "algorithm": "MASAC",
+  "algorithm_kwargs": {
+    "batch_size": 128,
+    "eval_max_path_length": 500,
+    "expl_max_path_length": 500,
+    "min_num_steps_before_training": 3300,
+    "num_epochs": 2000,
+    "num_eval_steps_per_epoch": 2500,
+    "num_expl_steps_per_train_loop": 2500,
+    "num_trains_per_train_loop": 1000
+  },
+  "eval_environment_kwargs": {
+    "control_freq": 20,
+    "controller": "OSC_POSE",
+    "env_name": "TwoArmHandover",
+    "hard_reset": false,
+    "horizon": 500,
+    "ignore_done": true,
+    "reward_scale": 1.0,
+    "robots": "['Panda', 'Panda']"
+  },
+  "expl_environment_kwargs": {
+    "control_freq": 20,
+    "controller": "OSC_POSE",
+    "env_name": "TwoArmHandover",
+    "hard_reset": false,
+    "horizon": 500,
+    "ignore_done": true,
+    "reward_scale": 1.0,
+    "robots": "['Panda', 'Panda']"
+  },
+  "policy_kwargs": {
+    "hidden_sizes": [
+      256,
+      256
+    ]
+  },
+  "qf_kwargs": {
+    "hidden_sizes": [
+      256,
+      256
+    ]
+  },
+  "replay_buffer_size": 1000000,
+  "seed": 17,
+  "trainer_kwargs": {
+    "discount": 0.99,
+    "policy_lr": 0.001,
+    "qf_lr": 0.0005,
+    "reward_scale": 1.0,
+    "soft_target_tau": 0.005,
+    "target_update_period": 5,
+    "use_automatic_entropy_tuning": true
+  },
+  "version": "normal"
+}
+/home/shenghui/.pyenv/versions/free-mujoco-robosuite/lib/python3.8/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32
+  logger.warn(
+/home/shenghui/.pyenv/versions/free-mujoco-robosuite/lib/python3.8/site-packages/torch/nn/modules/loss.py:528: UserWarning: Using a target size (torch.Size([128, 2])) that is different to the input size (torch.Size([128, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+Traceback (most recent call last):
+  File "scripts/train_multi.py", line 148, in <module>
+    run_experiment()
+  File "scripts/train_multi.py", line 121, in run_experiment
+    experiment(variant, agent=args.agent)
+  File "/home/shenghui/workspace/robosuite-multi-agent-RL/scripts/../util/rlkit_utils_multi.py", line 371, in experiment
+    algorithm.train()
+  File "/home/shenghui/workspace/robosuite-multi-agent-RL/scripts/../util/rlkit_custom.py", line 46, in train
+    self._train()
+  File "/home/shenghui/workspace/robosuite-multi-agent-RL/scripts/../util/rlkit_custom.py", line 235, in _train
+    self.trainer.train(train_data)
+  File "/home/shenghui/workspace/rlkit/rlkit/torch/torch_rl_algorithm.py", line 40, in train
+    self.train_from_torch(batch)
+  File "/home/shenghui/workspace/robosuite-multi-agent-RL/scripts/../util/masac.py", line 270, in train_from_torch
+    wandb.log(eval_stat_for_wandb)
+NameError: name 'wandb' is not defined

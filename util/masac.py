@@ -9,6 +9,8 @@ import rlkit.torch.pytorch_util as ptu
 from rlkit.core.eval_util import create_stats_ordered_dict
 from rlkit.torch.torch_rl_algorithm import TorchTrainer
 
+import wandb
+
 # 2 agent MASAC
 class MASACTrainer(TorchTrainer):
     def __init__(
@@ -265,6 +267,10 @@ class MASACTrainer(TorchTrainer):
             if self.use_automatic_entropy_tuning:
                 self.eval_statistics['Alpha'] = alpha.item()
                 self.eval_statistics['Alpha Loss'] = alpha_loss.item()
+
+        eval_statistics_for_wandb = dict(self.eval_statistics)
+        wandb.log(eval_statistics_for_wandb)
+
         self._n_train_steps_total += 1
 
     def get_diagnostics(self):

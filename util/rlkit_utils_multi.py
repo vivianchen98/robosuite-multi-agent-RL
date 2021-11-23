@@ -9,7 +9,7 @@ from rlkit.data_management.env_replay_buffer import EnvReplayBuffer
 from rlkit.envs.wrappers import NormalizedBoxEnv
 from rlkit.samplers.data_collector import MdpPathCollector
 from rlkit.torch.sac.policies import TanhGaussianPolicy, MakeDeterministic
-# from rlkit.torch.sac.sac import SACTrainer
+#  import MASACTrainer from masac.py
 from util.masac import MASACTrainer
 from rlkit.torch.td3.td3 import TD3Trainer
 from rlkit.torch.networks import FlattenMlp, TanhMlpPolicy
@@ -26,15 +26,9 @@ from robosuite.controllers import load_controller_config, ALL_CONTROLLERS
 import numpy as np
 
 #==================== Custom policy for multiagent case =================================
-import numpy as np
-import torch
-from torch import nn as nn
-
 from rlkit.policies.base import ExplorationPolicy, Policy
 from rlkit.torch.core import eval_np
 from rlkit.torch.distributions import TanhNormal
-# from util.distributions_multi import MultiTanhNormal
-# from util.distributions import TanhNormal
 from rlkit.torch.networks import Mlp
 from collections import namedtuple
 

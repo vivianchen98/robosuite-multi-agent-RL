@@ -16,6 +16,8 @@ import numpy as np
 
 import rlkit.pythonplusplus as ppp
 
+import wandb
+
 
 class CustomBaseRLAlgorithm(object, metaclass=abc.ABCMeta):
     """
@@ -370,6 +372,9 @@ def get_custom_generic_path_information(paths, path_length, reward_scale, stat_p
                     all_ks,
                     stat_prefix='{}/'.format(info_key),
                 ))
+
+    statistics_for_wandb = dict(statistics)
+    wandb.log(statistics_for_wandb)
 
     return statistics
 

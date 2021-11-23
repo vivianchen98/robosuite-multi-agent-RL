@@ -1,0 +1,73 @@
+------------- Running SAC --------------
+  Params:
+    variant: variant_multi_twoarmhandover.json
+2021-11-23 13:56:41.850097 CST | Variant:
+2021-11-23 13:56:41.850613 CST | {
+  "algorithm": "MASAC",
+  "algorithm_kwargs": {
+    "batch_size": 128,
+    "eval_max_path_length": 500,
+    "expl_max_path_length": 500,
+    "min_num_steps_before_training": 3300,
+    "num_epochs": 2000,
+    "num_eval_steps_per_epoch": 2500,
+    "num_expl_steps_per_train_loop": 2500,
+    "num_trains_per_train_loop": 1000
+  },
+  "eval_environment_kwargs": {
+    "control_freq": 20,
+    "controller": "OSC_POSE",
+    "env_name": "TwoArmHandover",
+    "hard_reset": false,
+    "horizon": 500,
+    "ignore_done": true,
+    "reward_scale": 1.0,
+    "robots": "['Panda', 'Panda']"
+  },
+  "expl_environment_kwargs": {
+    "control_freq": 20,
+    "controller": "OSC_POSE",
+    "env_name": "TwoArmHandover",
+    "hard_reset": false,
+    "horizon": 500,
+    "ignore_done": true,
+    "reward_scale": 1.0,
+    "robots": "['Panda', 'Panda']"
+  },
+  "policy_kwargs": {
+    "hidden_sizes": [
+      256,
+      256
+    ]
+  },
+  "qf_kwargs": {
+    "hidden_sizes": [
+      256,
+      256
+    ]
+  },
+  "replay_buffer_size": 1000000,
+  "seed": 17,
+  "trainer_kwargs": {
+    "discount": 0.99,
+    "policy_lr": 0.001,
+    "qf_lr": 0.0005,
+    "reward_scale": 1.0,
+    "soft_target_tau": 0.005,
+    "target_update_period": 5,
+    "use_automatic_entropy_tuning": true
+  },
+  "version": "normal"
+}
+/home/shenghui/.pyenv/versions/free-mujoco-robosuite/lib/python3.8/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32
+  logger.warn(
+/home/shenghui/.pyenv/versions/free-mujoco-robosuite/lib/python3.8/site-packages/torch/nn/modules/loss.py:528: UserWarning: Using a target size (torch.Size([128, 2])) that is different to the input size (torch.Size([128, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+2021-11-23 14:03:04.492351 CST | [TwoArmHandover_PandaPanda_OSC_POSE_SEED1_2021_11_23_13_56_41_0000--s-0] Epoch 0 finished
+> /home/shenghui/workspace/robosuite-multi-agent-RL/util/masac.py(273)get_diagnostics()
+-> wandb.log(eval_stat_for_wandb)
+
+
+
+(Pdb) print(eval_stat_for_wandb)
+{'QF1 Loss Agent0': 22.446201, 'QF1 Loss Agent1': 22.510107, 'QF2 Loss Agent0': 22.513046, 'QF2 Loss Agent1': 22.50106, 'Policy Loss': -4.694099, 'Q1 Predictions Agent0 Mean': -0.0026193922, 'Q1 Predictions Agent0 Std': 0.0016857843, 'Q1 Predictions Agent0 Max': 0.0013077782, 'Q1 Predictions Agent0 Min': -0.0063392143, 'Q1 Predictions Agent1 Mean': -0.0066825734, 'Q1 Predictions Agent1 Std': 0.001599006, 'Q1 Predictions Agent1 Max': -0.0019712772, 'Q1 Predictions Agent1 Min': -0.010949308, 'Q2 Predictions Agent0 Mean': -0.00971128, 'Q2 Predictions Agent0 Std': 0.0016527927, 'Q2 Predictions Agent0 Max': -0.0053459583, 'Q2 Predictions Agent0 Min': -0.014565442, 'Q2 Predictions Agent1 Mean': -0.00572312, 'Q2 Predictions Agent1 Std': 0.0013693256, 'Q2 Predictions Agent1 Max': -0.002221597, 'Q2 Predictions Agent1 Min': -0.008988268, 'Q Targets Agent0 Mean': 4.694535, 'Q Targets Agent0 Std': 0.6188244, 'Q Targets Agent0 Max': 7.833352, 'Q Targets Agent0 Min': 2.9961863, 'Q Targets Agent1 Mean': 4.697278, 'Q Targets Agent1 Std': 0.61880344, 'Q Targets Agent1 Max': 7.836694, 'Q Targets Agent1 Min': 3.0031042, 'Log Pis Mean': -4.7023706, 'Log Pis Std': 0.5645328, 'Log Pis Max': -3.2902145, 'Log Pis Min': -6.188624, 'Policy mu Mean': 0.00020603942, 'Policy mu Std': 0.0010726382, 'Policy mu Max': 0.0031979918, 'Policy mu Min': -0.0022580796, 'Policy log std Mean': 0.0001765622, 'Policy log std Std': 0.0014276457, 'Policy log std Max': 0.003626834, 'Policy log std Min': -0.003993536, 'Alpha': 0.9990004897117615, 'Alpha Loss': -0.0}

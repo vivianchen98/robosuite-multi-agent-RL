@@ -1,0 +1,160 @@
+2021-11-23 13:43:39,807 INFO    MainThread:26104 [internal.py:wandb_internal():87] W&B internal server running at pid: 26104, started at: 2021-11-23 13:43:39.807381
+2021-11-23 13:43:39,809 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: check_version
+2021-11-23 13:43:39,810 INFO    WriterThread:26104 [datastore.py:open_for_write():77] open: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/run-143dn95q.wandb
+2021-11-23 13:43:39,811 DEBUG   SenderThread:26104 [sender.py:send():238] send: header
+2021-11-23 13:43:39,811 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: check_version
+2021-11-23 13:43:39,876 DEBUG   SenderThread:26104 [sender.py:send():238] send: run
+2021-11-23 13:43:40,010 INFO    SenderThread:26104 [dir_watcher.py:__init__():169] watching files in: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files
+2021-11-23 13:43:40,010 INFO    SenderThread:26104 [sender.py:_start_run_threads():825] run started: 143dn95q with start time 1637696619
+2021-11-23 13:43:40,010 DEBUG   SenderThread:26104 [sender.py:send():238] send: summary
+2021-11-23 13:43:40,010 INFO    SenderThread:26104 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 13:43:40,012 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: run_start
+2021-11-23 13:43:40,013 DEBUG   HandlerThread:26104 [meta.py:__init__():40] meta init
+2021-11-23 13:43:40,013 DEBUG   HandlerThread:26104 [meta.py:__init__():54] meta init done
+2021-11-23 13:43:40,013 DEBUG   HandlerThread:26104 [meta.py:probe():214] probe
+2021-11-23 13:43:40,015 DEBUG   HandlerThread:26104 [meta.py:_setup_git():204] setup git
+2021-11-23 13:43:40,028 DEBUG   HandlerThread:26104 [meta.py:_setup_git():211] setup git done
+2021-11-23 13:43:40,029 DEBUG   HandlerThread:26104 [meta.py:_save_pip():58] save pip
+2021-11-23 13:43:40,029 DEBUG   HandlerThread:26104 [meta.py:_save_pip():72] save pip done
+2021-11-23 13:43:40,029 DEBUG   HandlerThread:26104 [meta.py:probe():252] probe done
+2021-11-23 13:43:40,086 DEBUG   SenderThread:26104 [sender.py:send():238] send: files
+2021-11-23 13:43:40,086 INFO    SenderThread:26104 [sender.py:_save_file():960] saving file wandb-metadata.json with policy now
+2021-11-23 13:43:40,092 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:43:40,093 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:43:40,566 INFO    Thread-11 :26104 [upload_job.py:push():137] Uploaded file /tmp/tmp9rrhqj9kwandb/18jqlgy2-wandb-metadata.json
+2021-11-23 13:43:41,013 INFO    Thread-8  :26104 [dir_watcher.py:_on_file_created():217] file/dir created: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files/output.log
+2021-11-23 13:43:41,013 INFO    Thread-8  :26104 [dir_watcher.py:_on_file_created():217] file/dir created: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files/wandb-metadata.json
+2021-11-23 13:43:41,014 INFO    Thread-8  :26104 [dir_watcher.py:_on_file_created():217] file/dir created: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files/wandb-summary.json
+2021-11-23 13:43:41,014 INFO    Thread-8  :26104 [dir_watcher.py:_on_file_created():217] file/dir created: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files/requirements.txt
+2021-11-23 13:43:43,011 INFO    Thread-8  :26104 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files/output.log
+2021-11-23 13:43:45,012 INFO    Thread-8  :26104 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files/output.log
+2021-11-23 13:43:55,176 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:43:55,176 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:44:08,082 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:44:10,271 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:44:10,271 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:44:25,372 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:44:25,372 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:44:38,151 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:44:40,463 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:44:40,463 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:44:55,550 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:44:55,550 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:45:08,214 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:45:10,626 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:45:10,627 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:45:25,721 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:45:25,722 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:45:38,276 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:45:40,807 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:45:40,808 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:45:55,888 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:45:55,889 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:46:08,342 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:46:10,963 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:46:10,964 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:46:26,041 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:46:26,041 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:46:38,399 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:46:41,125 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:46:41,125 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:46:56,207 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:46:56,208 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:47:08,457 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:47:11,302 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:47:11,302 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:47:26,381 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:47:26,381 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:47:38,518 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:47:41,480 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:47:41,480 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:47:56,588 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:47:56,589 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:48:08,574 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:48:11,686 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:48:11,687 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:48:26,762 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:48:26,763 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:48:38,631 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:48:41,837 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:48:41,837 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:48:56,932 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:48:56,933 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:49:08,687 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:49:12,010 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:49:12,011 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:49:27,100 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:49:27,100 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:49:38,748 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:49:42,210 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:49:42,210 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:49:57,296 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:49:57,297 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:49:59,139 INFO    Thread-8  :26104 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files/output.log
+2021-11-23 13:50:08,808 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:50:12,444 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:50:12,444 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:50:21,146 INFO    Thread-8  :26104 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files/output.log
+2021-11-23 13:50:27,531 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:50:27,532 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:50:38,865 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:50:42,632 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:50:42,632 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:50:57,710 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:50:57,711 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:51:08,934 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:51:12,802 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:51:12,802 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:51:27,897 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:51:27,897 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:51:38,992 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:51:42,980 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:51:42,980 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:51:58,064 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:51:58,064 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:52:09,049 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:52:13,143 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:52:13,143 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:52:28,302 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:52:28,302 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:52:39,105 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:52:43,400 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:52:43,400 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:52:58,474 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:52:58,474 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:53:09,162 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:53:13,557 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:53:13,558 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:53:28,637 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:53:28,637 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:53:39,219 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:53:43,733 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:53:43,734 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:53:58,835 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:53:58,836 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:54:07,220 INFO    Thread-8  :26104 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/shenghui/workspace/robosuite-multi-agent-RL/wandb/run-20211123_134339-143dn95q/files/output.log
+2021-11-23 13:54:09,278 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:54:13,915 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:54:13,915 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:54:28,994 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:54:28,994 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:54:39,337 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:54:44,084 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:54:44,084 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:54:59,168 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:54:59,168 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:55:09,394 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:55:14,246 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:55:14,247 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:55:29,322 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:55:29,322 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:55:39,458 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:55:44,399 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:55:44,400 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:55:59,476 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:55:59,477 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:56:09,525 DEBUG   SenderThread:26104 [sender.py:send():238] send: stats
+2021-11-23 13:56:14,561 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:56:14,561 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 13:56:29,658 DEBUG   HandlerThread:26104 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 13:56:29,658 DEBUG   SenderThread:26104 [sender.py:send_request():252] send_request: stop_status

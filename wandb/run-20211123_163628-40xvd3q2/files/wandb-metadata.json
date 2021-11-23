@@ -1,0 +1,25 @@
+{
+    "os": "Linux-5.11.0-40-generic-x86_64-with-glibc2.29",
+    "python": "3.8.5",
+    "heartbeatAt": "2021-11-23T22:36:29.241151",
+    "startedAt": "2021-11-23T22:36:28.339985",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "--variant",
+        "variant_multi_twoarmhandover.json"
+    ],
+    "state": "running",
+    "program": "scripts/train_multi.py",
+    "codePath": "scripts/train_multi.py",
+    "git": {
+        "remote": "git@github.com:vivianchen98/robosuite-multi-agent-RL.git",
+        "commit": "b26fa93d541e7d9916ecd52dcbbc1a0059249842"
+    },
+    "email": "sc9by@virginia.edu",
+    "root": "/home/shenghui/workspace/robosuite-multi-agent-RL",
+    "host": "shenghui-ThinkPad-T460",
+    "username": "shenghui",
+    "executable": "/home/shenghui/.pyenv/versions/free-mujoco-robosuite/bin/python"
+}

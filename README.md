@@ -25,3 +25,5 @@ python scripts/rollout.py --load_dir log/runs/TwoArmLift-PandaPanda-OSC-POSE-SEE
 
 * [robosuite-benchmark](https://robosuite.ai/docs/algorithms/benchmarking)
 * [rlkit](https://github.com/rail-berkeley/rlkit/tree/b7f97b2463df1c5a1ecd2d293cfcc7a4971dd0ab)
+* [SAC Paper](https://arxiv.org/pdf/1812.05905)
+* [simple MASAC implemented in tennis environment](https://github.com/adithya-subramanian/Multi_Agent_Soft_Actor_Critic/)

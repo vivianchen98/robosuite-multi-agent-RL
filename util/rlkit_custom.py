@@ -290,6 +290,7 @@ class CustomBatchRLAlgorithm(CustomBaseRLAlgorithm, metaclass=abc.ABCMeta):
             get_custom_generic_path_information(eval_paths, self.expl_max_path_length, self.trainer.reward_scale),
             prefix="evaluation/",
         )
+        wandb.log({"epoch": epoch})
 
         """
         Misc

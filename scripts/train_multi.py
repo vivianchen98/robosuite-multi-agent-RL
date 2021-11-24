@@ -12,7 +12,6 @@ from util.rlkit_utils_multi import experiment
 from util.arguments import *
 
 import wandb
-wandb.init(project="robosuite-multi-agent-RL", entity="shenghui")
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
@@ -124,7 +123,8 @@ def run_experiment():
 if __name__ == '__main__':
     # First, parse args
     args = parser.parse_args()
-
+    from easydict import EasyDict
+    wandb.init(project="robosuite-masac", config=EasyDict(vars(args)))
     # Set random seed
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
